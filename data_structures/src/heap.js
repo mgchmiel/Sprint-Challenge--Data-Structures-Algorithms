@@ -1,9 +1,13 @@
 const heapsort = (arr) => {
   /* Your code here */
-  
+  const heap = new Heap();
+  arr.forEach(item => heap.insert(item));
+  const NewHeapSort = [];
+    while (heap.getSize()) {
+      NewHeapSort.unshift(heap.delete());
+      }
+  return NewHeapSort;
 };
-
-
 class Heap {
   constructor() {
     this.storage = [];
